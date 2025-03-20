@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 import { DartsSingle } from './DartsSingle';
 
@@ -20,9 +20,9 @@ describe('DartsSingle Component', () => {
         });
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsSingle />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         await waitFor(() => {
@@ -37,9 +37,9 @@ describe('DartsSingle Component', () => {
         axios.get.mockReturnValue(new Promise(() => { }));
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsSingle />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         expect(screen.getByRole('status')).toBeInTheDocument();

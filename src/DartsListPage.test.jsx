@@ -22,9 +22,9 @@ describe('DartsListPage Component', () => {
         });
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsListPage />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         await waitFor(() => {
@@ -37,9 +37,9 @@ describe('DartsListPage Component', () => {
         axios.get.mockReturnValue(new Promise(() => { }));
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsListPage />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         expect(screen.getByRole('status')).toBeInTheDocument();

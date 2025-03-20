@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 import { DartsDel } from './DartsDel';
 
@@ -20,9 +20,9 @@ describe('DartsDel Component', () => {
         });
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsDel />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         await waitFor(() => {
@@ -45,9 +45,9 @@ describe('DartsDel Component', () => {
         axios.delete.mockResolvedValueOnce({});
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsDel />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         await waitFor(() => {

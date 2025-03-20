@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter, MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 import { DartsCreate } from './DartsCreate';
 
@@ -9,18 +9,18 @@ jest.mock('axios');
 describe('DartsCreate Component', () => {
     test('renders the component', () => {
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsCreate />
-            </BrowserRouter>
+            </MemoryRouter>
         );
         expect(screen.getByText('Új darts-játékos')).toBeInTheDocument();
     });
 
     test('renders the form fields', () => {
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsCreate />
-            </BrowserRouter>
+            </MemoryRouter>
         );
         expect(screen.getByLabelText('Dartsozó neve:')).toBeInTheDocument();
         expect(screen.getByLabelText('Születési éve:')).toBeInTheDocument();
@@ -33,9 +33,9 @@ describe('DartsCreate Component', () => {
         axios.post.mockResolvedValueOnce({});
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsCreate />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         fireEvent.change(screen.getByLabelText('Dartsozó neve:'), { target: { value: 'John Doe' } });

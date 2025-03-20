@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 import { DartsMod } from './DartsMod';
 
@@ -20,9 +20,9 @@ describe('DartsMod Component', () => {
         });
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsMod />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         await waitFor(() => {
@@ -43,9 +43,9 @@ describe('DartsMod Component', () => {
         });
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsMod />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         await waitFor(() => {
@@ -72,9 +72,9 @@ describe('DartsMod Component', () => {
         axios.put.mockResolvedValueOnce({});
 
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <DartsMod />
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         await waitFor(() => {
