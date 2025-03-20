@@ -1,10 +1,4 @@
-module.exports = {
-  transform: {
-    "^.+\\.jsx?$": "babel-jest",
-  },
-  testEnvironment: "jsdom",
-  moduleFileExtensions: ["js", "jsx"],
-  transformIgnorePatterns: [
-    "/node_modules/(?!axios/)"
-  ],
-};
+global.TextEncoder = require('util').TextEncoder;
+global.TextDecoder = require('util').TextDecoder;
+global.alert = jest.fn();
+global.location.reaload = jest.fn();
